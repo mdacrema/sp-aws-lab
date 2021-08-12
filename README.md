@@ -17,19 +17,20 @@ There are two folders:
 ```bash
 source tf_config.sh
 ```
-2. Run terraform init to initialise terraform 
+2. Modify lab.tfvars and set your public ssh key and your ip address
+3. Run terraform init to initialise terraform 
 ```bash
 docker run  --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY -v $PWD:/tf hashicorp/terraform:1.0.4 -chdir=/tf/$TF_FOLDER init -var-file=/tf/lab.tfvars
 ```
-3. Plan  
+4. Plan  
 ```bash
 docker run  --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY -v $PWD:/tf hashicorp/terraform:1.0.4 -chdir=/tf/$TF_FOLDER plan -var-file=/tf/lab.tfvars
 ```
-4. Apply 
+5. Apply 
 ```bash
 docker run  --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY -v $PWD:/tf hashicorp/terraform:1.0.4 -chdir=/tf/$TF_FOLDER apply --auto-approve -var-file=/tf/lab.tfvars
 ```
-5. Destroy
+6. Destroy
 Empty S3 bucket using AWS console and run
 ```bash
 docker run  --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY -v $PWD:/tf hashicorp/terraform:1.0.4 -chdir=/tf/$TF_FOLDER destroy --auto-approve -var-file=/tf/lab.tfvars
