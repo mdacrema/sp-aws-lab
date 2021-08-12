@@ -1,0 +1,4 @@
+#!/bin/bash
+export AWS_ACCESS_KEY_ID="AKIA4OJIHOHNOIIQIMH7"
+export AWS_SECRET_ACCESS_KEY="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"
+export TF_FOLDER="no_modules"
